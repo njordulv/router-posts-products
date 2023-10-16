@@ -22,7 +22,7 @@ The project is designed to help you explore react router principles on the examp
 
 ## Features
 
-- **Router, Routes, BrowserRouter** Navigate between different pages or views by defining routes.
+- **Router:** Navigate between different pages and views by defining routes.
 - **Multiple Pages:** Navigate between Home, About, Contact, Cars, and Posts using the navigation menu.
 - **Car Catalog:** View a catalog of cars with details like make, model, engine, year, price, and images.
 - **Posts:** Explore posts from a public API at [JSONPlaceholder](https://jsonplaceholder.typicode.com/posts).
