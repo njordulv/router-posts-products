@@ -104,6 +104,10 @@
   gap: 3px;
 }
 
+.center {
+  text-align: center;
+}
+
 .loader-wrapper {
   position: absolute;
   left: 0;

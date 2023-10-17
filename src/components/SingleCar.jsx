@@ -5,11 +5,12 @@ import NotFound from "./NotFound"
 const SingleCar = () => {
   const params = useParams()
   const cars = carsData.find((car) => car.slug === params.carSlug)
-  const { make, model, engine, year, vin, price, image } = cars
 
   if (!cars) {
     return <NotFound />
   }
+
+  const { make, model, engine, year, vin, price, image } = cars
 
   return (
     <div className="wrapper">

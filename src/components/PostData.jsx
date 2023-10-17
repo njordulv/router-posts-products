@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import SinglePost from "./SinglePost"
 import Loader from "./Loader"
 import POSTS_API from "../data/postsAPI"
+import NotFound from "./NotFound"
 
 const PostData = () => {
   const { postId } = useParams()
@@ -22,12 +23,15 @@ const PostData = () => {
     return <h1>This is an error - {error}</h1>
   }
 
-  const currentPost = posts.find((post) => post.id === parseInt(postId))
-
   if (loading) {
     return <Loader />
-  } else {
+  }
+
+  if (Array.isArray(posts)) {
+    const currentPost = posts.find((post) => post.id === parseInt(postId))
     return <SinglePost currentPost={currentPost} />
+  } else {
+    return <NotFound />
   }
 }
 

@@ -27,11 +27,15 @@ const Posts = () => {
         <Loader />
       ) : (
         <div className="posts">
-          {posts.map((post) => (
-            <Link to={`/posts/${post.id}`} key={post.id} className="post">
-              <span>{post.id}.</span> {post.title}
-            </Link>
-          ))}
+          {Array.isArray(posts) ? (
+            posts.map((post) => (
+              <Link to={`/posts/${post.id}`} key={post.id} className="post">
+                <span>{post.id}.</span> {post.title}
+              </Link>
+            ))
+          ) : (
+            <div className="center">No posts to display</div>
+          )}
         </div>
       )}
     </div>
