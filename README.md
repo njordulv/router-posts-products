@@ -25,6 +25,7 @@ The project is designed to help you explore react router principles on the examp
 - **Router:** Navigate between different pages and views by defining routes.
 - **Multiple Pages:** Navigate between Home, About, Contact, Cars, and Posts using the navigation menu.
 - **Car Catalog:** View a catalog of cars with details like make, model, engine, year, price, and images.
+- **Sorting:** View catalog of cars list between 5 types of sorting.
 - **Posts:** Explore posts from a public API at [JSONPlaceholder](https://jsonplaceholder.typicode.com/posts).
 
 ## Car Data
