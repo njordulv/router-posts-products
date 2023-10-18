@@ -1,45 +1,46 @@
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import carsData from "../data/carsData"
-import NotFound from "./NotFound"
+import { useEffect } from "react"
 
 const SingleCar = () => {
+  const navigate = useNavigate()
   const params = useParams()
   const cars = carsData.find((car) => car.slug === params.carSlug)
 
-  if (!cars) {
-    return <NotFound />
-  }
-
-  const { make, model, engine, year, vin, price, image } = cars
+  useEffect(() => {
+    if (!cars) {
+      navigate("..", { relative: "path" })
+    }
+  }, [cars, navigate])
 
   return (
     <div className="wrapper">
-      <h1>{make}</h1>
+      <h1>{cars?.make}</h1>
       <div className="car-item">
-        <img src={image} alt={make} width="288" height="162" />
+        <img src={cars?.image} alt={cars?.make} width="288" height="162" />
         <div className="car-content">
           <div>
             <span>Make: </span>
-            {make}
+            {cars?.make}
           </div>
           <div>
             <span>Model: </span>
-            {model}
+            {cars?.model}
           </div>
           <div>
             <span>Engine: </span>
-            {engine}L.
+            {cars?.engine}L.
           </div>
           <div>
             <span>Year: </span>
-            {year}
+            {cars?.year}
           </div>
           <div>
             <span>VIN: </span>
-            {vin}
+            {cars?.vin}
           </div>
           <div>
-            <span>Price: </span>${price}
+            <span>Price: </span>${cars?.price}
           </div>
         </div>
       </div>
